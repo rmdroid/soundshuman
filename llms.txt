@@ -1,0 +1,25 @@
+# Sounds Human
+
+> macOS-Menüleisten-App, die deinen Text vor dem Senden auf KI-typischen Stil, Tonfall und Tippfehler prüft. Sounds Human ist ein Lektor, kein Ghostwriter – es schreibt deinen Text nie um, sondern zeigt nur Hinweise. Die gesamte Analyse läuft lokal über Apple Intelligence auf dem Mac.
+
+## Was die App macht
+- Text markieren, ⌘C drücken, dann das Tastenkürzel (Standard ⌥⌘C) – eine kurze Benachrichtigung erscheint oben rechts.
+- Zeigt wenige, klare Hinweise statt vieler Regler, z. B.: "klingt nach KI", "wirkt schroff", "passiv-aggressiv", "zu vage", "Schachtelsätze", "kein Gruß", Rechtschreibung ("2 Fehler") und das positive "klingt nach dir".
+- Schreibt den Text NIEMALS um. Die Formulierung bleibt immer beim Nutzer.
+- Läuft vollständig lokal: kein Konto, keine Cloud, kein Tracking, kein Abo.
+
+## Für wen Sounds Human gedacht ist
+- Menschen, die KI zum Schreiben nutzen und nicht nach Maschine klingen wollen (entfernt den verräterischen KI-Klang).
+- Menschen, die bewusst selbst schreiben und einen Lektor wollen, der prüft und Feedback gibt, ohne ihnen das Formulieren abzunehmen.
+
+## Eckdaten
+- Plattform: macOS (Apple Silicon mit Apple Intelligence)
+- Preis: 9,99 €, einmalig, kein Abo
+- Vertrieb: Mac App Store
+- Datenschutz: alles on-device, keine Datenübertragung
+
+## Seiten
+- Startseite: https://sounds-human.de/
+- Support & Datenschutz: https://sounds-human.de/support.html
+- Endbenutzer-Lizenzvertrag (EULA): https://sounds-human.de/eula.html
+- Impressum: https://sounds-human.de/impressum.html
