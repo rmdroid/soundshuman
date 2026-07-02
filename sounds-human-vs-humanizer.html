@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sounds Human vs. AI-Humanizer: Der Unterschied | Lektor statt Umschreib-Tool</title>
+<meta name="description" content="AI-Humanizer schreiben deinen Text automatisch um, um Detektoren zu täuschen. Sounds Human markiert nur und lässt dich formulieren. Der ehrliche Vergleich beider Ansätze.">
+<meta name="author" content="Robert Meyer">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#080b12">
+<link rel="canonical" href="https://sounds-human.de/sounds-human-vs-humanizer.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sounds Human">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://sounds-human.de/sounds-human-vs-humanizer.html">
+<meta property="og:title" content="Sounds Human vs. AI-Humanizer: Der Unterschied">
+<meta property="og:description" content="Humanizer schreiben automatisch um, um Detektoren zu täuschen. Sounds Human markiert nur – du formulierst. Der ehrliche Vergleich.">
+<meta property="og:image" content="https://sounds-human.de/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sounds Human vs. AI-Humanizer: Der Unterschied">
+<meta name="twitter:description" content="Humanizer schreiben automatisch um, um Detektoren zu täuschen. Sounds Human markiert nur – du formulierst.">
+<meta name="twitter:image" content="https://sounds-human.de/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sounds Human vs. AI-Humanizer: Der Unterschied",
+  "description": "AI-Humanizer schreiben Text automatisch um, um KI-Detektoren zu täuschen. Sounds Human ist ein Lektor, der markiert statt umzuschreiben. Der Vergleich beider Ansätze.",
+  "inLanguage": "de",
+  "author": { "@type": "Person", "name": "Robert Meyer" },
+  "publisher": { "@type": "Organization", "name": "Sounds Human", "url": "https://sounds-human.de/" },
+  "mainEntityOfPage": "https://sounds-human.de/sounds-human-vs-humanizer.html",
+  "datePublished": "2026-07-02",
+  "dateModified": "2026-07-02"
+}
+</script>
+<script defer src="https://cv.rm-on.de/script.js" data-website-id="7956aeae-0eec-42c5-887c-97e8f1986d49"></script>
+<style>
+  :root{
+    --bg:#080b12; --bg2:#0f172a; --panel:#121a2b;
+    --amber:#e8b56b; --amber-deep:#f5a524; --green:#5bc77f; --red:#e8736d;
+    --text:#e9eef6; --muted:#94a3b8; --faint:#5b6677;
+    --line:rgba(255,255,255,.08);
+    --glass:rgba(255,255,255,.045);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",system-ui,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+  .b1{width:560px;height:560px;background:#3a2a12;top:-160px;left:-120px}
+  .b2{width:480px;height:480px;background:#1a2f24;bottom:-140px;right:-100px;opacity:.4}
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:16px;color:var(--text);text-decoration:none}
+  .brand img{width:38px;height:38px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+  .nav-cta{font-size:13px;font-weight:600;color:var(--bg);background:var(--amber-deep);
+    padding:9px 16px;border-radius:999px;text-decoration:none;transition:transform .15s,filter .15s}
+  .nav-cta:hover{transform:translateY(-1px);filter:brightness(1.05)}
+
+  article{max-width:740px;margin:0 auto;padding:44px 0 30px}
+  .eyebrow{font:600 12px/1 ui-monospace,"SF Mono",monospace;letter-spacing:2.5px;
+    color:var(--amber);text-transform:uppercase;margin-bottom:20px}
+  h1{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;letter-spacing:-.03em;line-height:1.12}
+  h1 .amber{color:var(--amber)}
+  .lead{font-size:clamp(1.02rem,2vw,1.18rem);color:var(--muted);margin-top:20px;font-weight:450}
+  .answer{margin-top:26px;padding:20px 22px;border:1px solid var(--line);border-radius:16px;
+    background:var(--glass);font-size:15.5px;line-height:1.65}
+  .answer b{color:var(--amber)}
+  article h2{font-size:clamp(1.3rem,2.8vw,1.7rem);font-weight:750;letter-spacing:-.02em;margin:52px 0 14px}
+  article p{color:var(--muted);margin:12px 0;font-size:15.5px}
+  article li{color:var(--muted);margin:8px 0 8px 20px;font-size:15.5px}
+  article b,article strong{color:var(--text)}
+  article a{color:var(--amber);text-decoration:none}
+  article a:hover{text-decoration:underline}
+
+  .cmp{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px}
+  .cmp th,.cmp td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  .cmp th{font-size:13px;color:var(--text);font-weight:700}
+  .cmp th:first-child{width:26%}
+  .cmp td:first-child{color:var(--text);font-weight:600}
+  .cmp td{color:var(--muted)}
+  .cmp .hl{color:var(--amber);font-weight:600}
+  .cmp thead th:nth-child(3){color:var(--amber)}
+  @media(max-width:560px){.cmp{font-size:12.5px}.cmp th,.cmp td{padding:10px 8px}}
+
+  .faqbox{margin-top:18px}
+  .faqbox details{border:1px solid var(--line);border-radius:14px;background:var(--glass);
+    padding:16px 20px;margin-bottom:10px}
+  .faqbox summary{cursor:pointer;font-weight:650;font-size:15px;color:var(--text)}
+  .faqbox p{margin-top:10px}
+
+  .cta{margin:60px 0 20px;padding:30px 28px;text-align:center;border:1px solid var(--line);
+    border-radius:20px;background:linear-gradient(180deg,rgba(20,28,44,.82),rgba(8,12,20,.62))}
+  .cta h2{margin:0 0 10px;font-size:1.45rem}
+  .cta p{max-width:520px;margin:0 auto}
+  .btn{font-size:15px;font-weight:600;padding:13px 26px;border-radius:999px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:9px;margin-top:20px;
+    background:var(--amber-deep);color:var(--bg);transition:transform .15s,filter .15s}
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+  .cta small{display:block;margin-top:12px;font-size:12.5px;color:var(--faint)}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--faint);font-size:13px}
+  footer a{color:var(--muted);text-decoration:none}
+  .foot-nav{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  @media(max-width:640px){article{padding-top:28px}}
+</style>
+</head>
+<body>
+<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div></div>
+
+<div class="wrap">
+  <nav>
+    <a class="brand" href="index.html"><img src="icon.png" alt="Sounds Human App-Icon">Sounds Human</a>
+    <a class="nav-cta" href="index.html">Zur App</a>
+  </nav>
+
+  <article>
+    <div class="eyebrow">Vergleich</div>
+    <h1>Sounds Human vs. <span class="amber">AI-Humanizer</span>: Der Unterschied</h1>
+    <p class="lead">Beide versprechen, dass dein Text nicht mehr nach KI klingt. Dahinter stehen aber zwei grundverschiedene Philosophien — und nur eine davon lässt dich die Kontrolle behalten.</p>
+
+    <div class="answer">
+      <b>Kurzantwort:</b> AI-Humanizer schreiben deinen Text automatisch um, mit dem Ziel, KI-Detektoren zu täuschen. Sounds Human ist ein Lektor: Es markiert künstliche, vage oder schroffe Stellen und lässt dich selbst formulieren — lokal auf dem Mac, ohne Cloud. Der Unterschied ist Kontrolle: Beim Humanizer entscheidet die Maschine über jede Formulierung, bei Sounds Human entscheidest du.
+    </div>
+
+    <h2>Der Vergleich im Überblick</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th></th><th>AI-Humanizer</th><th>Sounds Human</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ansatz</td><td>Schreibt den Text automatisch um (Paraphrasierung)</td><td class="hl">Markiert nur — schreibt niemals um</td></tr>
+        <tr><td>Ziel</td><td>KI-Detektoren täuschen</td><td class="hl">Text soll nach dir klingen und gut ankommen</td></tr>
+        <tr><td>Wer formuliert</td><td>Die Maschine</td><td class="hl">Du — die App zeigt nur, wo es hakt</td></tr>
+        <tr><td>Dein Stil</td><td>Geht verloren, wird durch Tool-Stil ersetzt</td><td class="hl">Bleibt vollständig erhalten</td></tr>
+        <tr><td>Datenschutz</td><td>Text wird in die Cloud hochgeladen</td><td class="hl">Komplett lokal (Apple Intelligence, on-device)</td></tr>
+        <tr><td>Prüfumfang</td><td>Nur KI-Klang</td><td class="hl">KI-Klang, Tonfall (schroff, passiv-aggressiv), Klarheit, Rechtschreibung, fehlender Gruß</td></tr>
+        <tr><td>Preismodell</td><td>Meist Abo (10–20 €/Monat)</td><td class="hl">9,99 € einmalig, kein Abo</td></tr>
+        <tr><td>Plattform</td><td>Web-Dienste</td><td class="hl">macOS-Menüleisten-App (Apple Silicon)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Wann ein Humanizer das richtige Werkzeug ist</h2>
+    <p>Ehrliche Antwort: Es gibt Anwendungsfälle. Wer große Mengen generierten Text schnell umformulieren muss und wen der eigene Ton nicht interessiert — etwa bei Masse-Produktbeschreibungen — für den ist ein Paraphrasier-Tool das schnellere Werkzeug. Man sollte sich nur zweier Risiken bewusst sein: Automatisches Umformulieren verschiebt Bedeutungen, und das Detektoren-Wettrüsten ist ein Katz-und-Maus-Spiel, das der Text auch verlieren kann. Warum Detektoren selbst oft danebenliegen, steht in unserem Ratgeber: <a href="ki-text-erkennen.html">Woran erkennt man KI-generierten Text?</a></p>
+
+    <h2>Wann Sounds Human das richtige Werkzeug ist</h2>
+    <p>Immer dann, wenn ein echter Mensch deinen Text liest — und deine Beziehung zu ihm zählt. E-Mails an Kunden und Kollegen, LinkedIn-Posts, Angebote, Bewerbungen. Hier geht es nicht darum, eine Software zu täuschen, sondern darum, dass der Text <b>nach dir</b> klingt: konkret, klar, im richtigen Ton. Sounds Human prüft dafür mehr als nur KI-Klang — es warnt auch, wenn eine Mail schroff oder passiv-aggressiv wirkt oder der Gruß fehlt. Die konkreten Handgriffe, mit denen du markierte Stellen verbesserst, findest du hier: <a href="ki-text-menschlicher-machen.html">KI-Text menschlicher machen in 5 Schritten</a>.</p>
+
+    <h2>Der Kern des Unterschieds</h2>
+    <p>Es ist dieselbe Unterscheidung wie zwischen Ghostwriter und Lektor. Der Ghostwriter schreibt für dich — schnell, aber es ist nicht mehr dein Text. Der Lektor liest mit, zeigt auf Schwächen und lässt dich entscheiden. Humanizer sind Ghostwriter für den zweiten Entwurf. Sounds Human ist bewusst das Gegenteil: <b>ein Lektor für den Moment vor dem Senden.</b></p>
+
+    <h2>Häufige Fragen</h2>
+    <div class="faqbox">
+      <details>
+        <summary>Ist Sounds Human ein KI-Detektor?</summary>
+        <p>Nein. Es prüft nicht, ob ein Text von KI stammt, und vergibt keinen „KI-Score". Es zeigt dir, welche Stellen in deinem eigenen Text künstlich, unklar oder schroff <i>wirken</i> — damit du sie vor dem Senden anpassen kannst.</p>
+      </details>
+      <details>
+        <summary>Kann Sounds Human meinen Text auch automatisch verbessern?</summary>
+        <p>Bewusst nicht. Die App schreibt grundsätzlich nie um — das ist ihr Kernversprechen. Sobald ein Tool für dich formuliert, klingt der Text nach dem Tool, nicht nach dir.</p>
+      </details>
+      <details>
+        <summary>Wohin werden meine Texte übertragen?</summary>
+        <p>Nirgendwohin. Die gesamte Analyse läuft on-device über Apple Intelligence auf deinem Mac. Kein Konto, keine Cloud, kein Tracking — im Gegensatz zu Web-Humanizern, bei denen jeder Text auf fremden Servern landet.</p>
+      </details>
+    </div>
+
+    <div class="cta">
+      <h2>Lektor statt Umschreib-Automat</h2>
+      <p><b>Sounds Human</b> zeigt dir vor dem Senden, wo dein Text künstlich, vage oder schroff klingt — und überlässt dir jede Formulierung. Lokal auf dem Mac, einmal zahlen, fertig.</p>
+      <a class="btn" href="index.html">Sounds Human ansehen</a>
+      <small>9,99 € einmalig · kein Abo · keine Cloud · Mac App Store</small>
+    </div>
+  </article>
+</div>
+
+<footer class="wrap">
+  Sounds Human · Lektor, kein Ghostwriter · © Robert Meyer 2026
+  <nav class="foot-nav">
+    <a href="index.html">Startseite</a>
+    <a href="ki-text-erkennen.html">KI-Text erkennen</a>
+    <a href="ki-text-menschlicher-machen.html">Menschlicher machen</a>
+    <a href="support.html">Support</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </nav>
+</footer>
+</body>
+</html>
