@@ -18,6 +18,11 @@
 - Vertrieb: Mac App Store
 - Datenschutz: alles on-device, keine Datenübertragung
 
+## Ratgeber
+- Woran erkennt man KI-generierten Text? Die 7 typischen Merkmale (Floskeln, Symmetrie, fehlende Details) und warum KI-Detektoren oft danebenliegen: https://sounds-human.de/ki-text-erkennen.html
+- KI-Text menschlicher machen: 5 Schritte statt Umschreib-Tools – warum AI-Humanizer den eigenen Ton zerstören und was wirklich hilft: https://sounds-human.de/ki-text-menschlicher-machen.html
+- Sounds Human vs. AI-Humanizer: Der Unterschied zwischen Lektor (markiert, du formulierst) und Humanizer (schreibt automatisch um): https://sounds-human.de/sounds-human-vs-humanizer.html
+
 ## Seiten
 - Startseite: https://sounds-human.de/
 - Support & Datenschutz: https://sounds-human.de/support.html
