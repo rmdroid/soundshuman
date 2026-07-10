@@ -3,23 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sounds Human – Bevor du sendest: klingt das wirklich nach dir? | Mac-App</title>
-<meta name="description" content="Der letzte Blick auf deinen Text, bevor ihn jemand anderes liest. Sounds Human markiert künstliche, unklare, schroffe oder fehlerhafte Stellen – lokal auf dem Mac.">
+<title>Sounds Human – KI-Text und Tonfall lokal auf dem Mac</title>
+<meta name="description" content="Sounds Human prüft KI-Muster, Tonfall, Klarheit und Rechtschreibung direkt auf deinem Mac. Kein Umschreiben, kein Konto, kein Abo.">
 <meta name="keywords" content="KI-Text erkennen, klingt nach KI, Tonfall prüfen, Lektor Mac App, Text vor dem Senden prüfen, Apple Intelligence App, Rechtschreibprüfung Mac, ChatGPT Text menschlicher machen">
 <meta name="author" content="Robert Meyer">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#080b12">
+<meta name="theme-color" content="#0a0b0d">
 <link rel="canonical" href="https://sounds-human.de/">
+<link rel="icon" type="image/png" href="icon-76.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sounds Human">
 <meta property="og:locale" content="de_DE">
 <meta property="og:url" content="https://sounds-human.de/">
 <meta property="og:title" content="Sounds Human – Bevor du sendest: klingt das wirklich nach dir?">
-<meta property="og:description" content="Der letzte Blick auf deinen Text, bevor ihn jemand anderes liest. Kein Ghostwriter. Kein KI-Detektor. Lokal auf dem Mac.">
+<meta property="og:description" content="Prüft KI-Muster, Tonfall, Klarheit und Rechtschreibung direkt auf deinem Mac. Dein Text bleibt deiner.">
 <meta property="og:image" content="https://sounds-human.de/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sounds Human – Bevor du sendest: klingt das wirklich nach dir?">
-<meta name="twitter:description" content="Der letzte Blick auf deinen Text, bevor ihn jemand anderes liest. Kein Ghostwriter. Kein KI-Detektor. Lokal auf dem Mac.">
+<meta name="twitter:description" content="Prüft KI-Muster, Tonfall, Klarheit und Rechtschreibung direkt auf deinem Mac. Dein Text bleibt deiner.">
 <meta name="twitter:image" content="https://sounds-human.de/og-image.png">
 <script type="application/ld+json">
 {
@@ -28,8 +29,10 @@
   "name": "Sounds Human",
   "operatingSystem": "macOS",
   "applicationCategory": "BusinessApplication",
-  "description": "Sounds Human markiert vor dem Senden Stellen, die künstlich, unklar, schroff oder fehlerhaft wirken. Es ist ein Lektor für den Moment vor dem Senden, kein Ghostwriter und kein KI-Detektor.",
+  "description": "Mac-App zur lokalen Prüfung von KI-Mustern, Tonfall, Klarheit und Rechtschreibung. Sounds Human markiert auffällige Stellen, ohne Texte umzuschreiben.",
   "url": "https://sounds-human.de/",
+  "downloadUrl": "https://apps.apple.com/de/app/sounds-human/id6780192429?mt=12",
+  "softwareRequirements": "Mac mit Apple Silicon und aktiviertem Apple Intelligence",
   "offers": { "@type": "Offer", "price": "9.99", "priceCurrency": "EUR" },
   "author": { "@type": "Person", "name": "Robert Meyer" }
 }
@@ -37,34 +40,35 @@
 <script defer src="https://cv.rm-on.de/script.js" data-website-id="7956aeae-0eec-42c5-887c-97e8f1986d49"></script>
 <style>
   :root{
-    --bg:#080b12; --bg2:#0f172a; --panel:#121a2b;
-    --amber:#e8b56b; --amber-deep:#f5a524; --green:#5bc77f; --red:#e8736d;
-    --text:#e9eef6; --muted:#94a3b8; --faint:#5b6677;
-    --line:rgba(255,255,255,.08);
-    --glass:rgba(255,255,255,.045);
+    --bg:#0a0b0d; --bg2:#111317; --panel:#15181d;
+    --amber:#e8b56b; --amber-deep:#f2aa3f; --green:#6bcf8c; --red:#ef817a;
+    --text:#f1f2f4; --muted:#b0b6c0; --faint:#89919e;
+    --line:rgba(255,255,255,.13);
+    --glass:#12151a;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
     background:var(--bg); color:var(--text);
+    background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px);
+    background-size:100% 72px;
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",system-ui,sans-serif;
     line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
-  .aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
-  .b1{width:560px;height:560px;background:#3a2a12;top:-160px;left:-120px}
-  .b2{width:480px;height:480px;background:#1a2f24;bottom:-140px;right:-100px;opacity:.4}
-  .b3{width:420px;height:420px;background:#2a1f3a;top:40%;left:55%;opacity:.3}
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px}
+  .wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 24px}
+  .skip-link{position:fixed;top:10px;left:10px;z-index:200;padding:10px 14px;background:var(--amber-deep);color:var(--bg);font-weight:700;text-decoration:none;transform:translateY(-160%)}
+  .skip-link:focus{transform:translateY(0)}
+  :focus-visible{outline:3px solid var(--amber-deep);outline-offset:4px}
 
   nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:16px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:650;font-size:16px;white-space:nowrap}
   .brand img{width:38px;height:38px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
-  .nav-cta{font-size:13px;font-weight:600;color:var(--bg);background:var(--amber-deep);
-    padding:9px 16px;border-radius:999px;text-decoration:none;transition:transform .15s,filter .15s}
+  .nav-cta{font-size:13px;font-weight:700;color:var(--bg);background:var(--amber-deep);
+    padding:9px 15px;border-radius:8px;text-decoration:none;transition:transform .15s,filter .15s}
   .nav-cta:hover{transform:translateY(-1px);filter:brightness(1.05)}
+  .nav-cta-short{display:none}
 
-  header{text-align:center;padding:64px 0 40px}
+  header{text-align:center;padding:58px 0 32px}
   .eyebrow{font:600 12px/1 ui-monospace,"SF Mono",monospace;letter-spacing:2.5px;
     color:var(--amber);text-transform:uppercase;margin-bottom:22px}
   h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.04}
@@ -72,7 +76,7 @@
   .lead{font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--muted);max-width:620px;
     margin:24px auto 0;font-weight:450}
   .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
-  .btn{font-size:15px;font-weight:600;padding:13px 26px;border-radius:999px;text-decoration:none;
+  .btn{font-size:15px;font-weight:650;padding:13px 24px;border-radius:10px;text-decoration:none;
     display:inline-flex;align-items:center;gap:9px;transition:transform .15s,filter .15s,background .15s}
   .btn-primary{background:var(--amber-deep);color:var(--bg)}
   .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.06)}
@@ -91,12 +95,12 @@
   .buy-note a{color:var(--muted);text-decoration:underline}
   .price{margin-top:16px;font-size:14.5px;font-weight:700;color:var(--amber)}
   .price span{color:var(--faint);font-weight:500}
-  .hero-note{margin-top:12px;font-size:13px;color:var(--faint)}
+  .hero-note{margin-top:12px;font-size:13px;color:var(--muted)}
+  .system-note{max-width:680px;margin:9px auto 0;color:var(--faint);font-size:12px;line-height:1.5}
 
-  .demo{margin:64px auto 0;max-width:960px;position:relative;text-align:left;
-    border:1px solid rgba(255,255,255,.1);border-radius:24px;overflow:hidden;
-    background:linear-gradient(180deg,rgba(20,28,44,.82),rgba(8,12,20,.62));
-    box-shadow:0 34px 80px rgba(0,0,0,.48)}
+  .demo{margin:52px auto 0;max-width:980px;position:relative;text-align:left;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    background:var(--panel);box-shadow:0 28px 70px rgba(0,0,0,.4)}
   .mac-menubar{height:42px;display:flex;align-items:center;justify-content:space-between;
     padding:0 15px;border-bottom:1px solid rgba(255,255,255,.08);
     background:rgba(245,247,251,.08);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
@@ -190,34 +194,28 @@
       scroll-behavior:auto!important;transition-duration:.01ms!important}
   }
 
-  section{padding:80px 0;position:relative;z-index:1}
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
-  .reveal.in{opacity:1;transform:none}
+  section{padding:72px 0;position:relative;z-index:1}
+  #how,#download{scroll-margin-top:76px}
+  .reveal{opacity:1;transform:none}
+  .has-reveal .reveal{opacity:0;transform:translateY(20px);transition:opacity .45s,transform .45s}
+  .has-reveal .reveal.in{opacity:1;transform:none}
   h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-.02em;line-height:1.1}
   .sec-sub{color:var(--muted);font-size:1.05rem;max-width:560px;margin-top:14px}
   .center{text-align:center}.center .sec-sub{margin-left:auto;margin-right:auto}
 
-  .problem{font-size:clamp(1.5rem,3.6vw,2.4rem);font-weight:700;line-height:1.3;max-width:780px}
-  .problem .hl{color:var(--amber)}
-  .problem .strike{color:var(--faint);text-decoration:none;
-    background-image:linear-gradient(var(--red),var(--red));
-    background-position:0 56%;background-repeat:no-repeat;background-size:0% 2px;
-    transition:background-size 1.1s cubic-bezier(.2,.7,.2,1) .35s}
-  .problem.in .strike{background-size:100% 2px;animation:detectPulse 2.4s 1.5s ease-in-out infinite}
-  @keyframes detectPulse{0%,100%{opacity:.5}50%{opacity:.82}}
-
   .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
   .vs{display:flex;flex-direction:column;gap:16px}
-  .vs-row{display:flex;align-items:flex-start;gap:13px;padding:16px;border-radius:14px;
+  .vs-row{display:flex;align-items:flex-start;gap:13px;padding:16px;border-radius:9px;
     background:var(--glass);border:1px solid var(--line)}
   .vs-row .ic{flex:0 0 auto;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-size:13px;font-weight:800}
   .vs-row.no .ic{background:rgba(232,115,109,.18);color:var(--red)}
   .vs-row.yes .ic{background:rgba(91,199,127,.18);color:var(--green)}
   .vs-row b{font-size:14.5px;display:block}
   .vs-row p{font-size:13px;color:var(--muted);margin-top:2px}
+  .audience-note{max-width:50ch;margin-top:23px;padding-left:15px;border-left:2px solid var(--amber);color:var(--muted);font-size:14px}
 
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-  .step{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .step{background:var(--glass);border:1px solid var(--line);border-radius:9px;padding:24px}
   .step .n{font:800 clamp(2.6rem,5vw,3.4rem)/1 ui-monospace,monospace;color:var(--amber);letter-spacing:-1px;display:block;opacity:.9}
   .step .keys{margin:14px 0 12px;display:flex;gap:6px;flex-wrap:wrap}
   .key{font:700 13px/1 ui-monospace,monospace;background:rgba(255,255,255,.06);
@@ -226,7 +224,7 @@
   .step p{font-size:13px;color:var(--muted);margin-top:5px}
 
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:44px}
-  .gcard{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:18px;
+  .gcard{background:var(--glass);border:1px solid var(--line);border-radius:9px;padding:18px;
     transition:transform .2s,border-color .2s}
   .gcard:hover{transform:translateY(-3px)}
   .gpill{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;
@@ -237,10 +235,11 @@
   .dot{width:9px;height:9px;border-radius:50%}
 
   .privacy{text-align:center}
-  .lock{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;margin:0 auto 22px;
-    background:rgba(91,199,127,.12);border:1px solid rgba(91,199,127,.25);font-size:28px}
+  .lock{width:58px;height:58px;border-radius:9px;display:grid;place-items:center;margin:0 auto 22px;
+    background:rgba(91,199,127,.1);border:1px solid rgba(91,199,127,.3);color:var(--green)}
+  .lock svg{width:27px;height:27px}
   .badges{display:flex;gap:11px;flex-wrap:wrap;justify-content:center;margin-top:30px}
-  .badge{font-size:13px;font-weight:600;padding:9px 16px;border-radius:999px;
+  .badge{font-size:13px;font-weight:600;padding:9px 14px;border-radius:7px;
     background:var(--glass);border:1px solid var(--line)}
 
   .faq{max-width:740px;margin:44px auto 0}
@@ -251,8 +250,9 @@
   details[open] summary::after{transform:rotate(45deg)}
   details p{color:var(--muted);font-size:14.5px;margin-top:12px}
 
-  .final{text-align:center;background:linear-gradient(180deg,transparent,rgba(232,181,107,.05));border-radius:32px;padding:72px 24px;margin-bottom:40px}
-  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--faint);font-size:13px}
+  .final{text-align:center;background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:64px 24px;margin-bottom:40px}
+  .purchase-choice{max-width:640px;margin:20px auto 0;color:var(--muted);font-size:13px;line-height:1.55}
+  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
   footer a{color:var(--muted);text-decoration:none}
 
   .modal{position:fixed;inset:0;z-index:100;background:rgba(4,7,12,.7);
@@ -261,7 +261,7 @@
     opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
   .modal.open{opacity:1;visibility:visible}
   .modal-box{position:relative;width:100%;max-width:760px;height:80vh;
-    background:#0a0e17;border:1px solid var(--line);border-radius:20px;overflow:hidden;
+    background:#0a0e17;border:1px solid var(--line);border-radius:12px;overflow:hidden;
     box-shadow:0 40px 80px rgba(0,0,0,.6);transform:translateY(14px);transition:transform .25s}
   .modal.open .modal-box{transform:none}
   .modal-box iframe{width:100%;height:100%;border:0;background:#0a0e17}
@@ -270,6 +270,7 @@
     color:var(--text);font-size:16px;cursor:pointer;display:grid;place-items:center;
     transition:background .15s}
   .modal-close:hover{background:rgba(255,255,255,.1)}
+  .dialog-title{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
   .foot-nav{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:14px}
   .foot-nav a,.foot-btn{color:var(--muted);text-decoration:none;font-size:13px;
@@ -279,7 +280,7 @@
   .foot-nav .yt svg{width:17px;height:17px}
 
   .updates-box{position:relative;width:100%;max-width:440px;background:#0d1320;
-    border:1px solid var(--line);border-radius:20px;padding:28px 26px 26px;
+    border:1px solid var(--line);border-radius:12px;padding:28px 26px 26px;
     box-shadow:0 40px 80px rgba(0,0,0,.6);transform:translateY(14px);transition:transform .25s;text-align:left}
   .modal.open .updates-box{transform:none}
   .updates-box h3{font-size:1.15rem;font-weight:800;margin-bottom:6px}
@@ -287,7 +288,8 @@
   .updates-box label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px}
   .updates-box input{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);
     border-radius:10px;padding:11px 13px;color:var(--text);font-size:14px;margin-bottom:14px;font-family:inherit}
-  .updates-box input:focus{outline:none;border-color:var(--amber)}
+  .updates-box input:focus{border-color:var(--amber)}
+  .updates-box input:focus-visible{outline:3px solid var(--amber-deep);outline-offset:2px}
   .updates-box .btn{width:100%;justify-content:center;cursor:pointer;border:0;font-family:inherit}
   .ustatus{font-size:13px;margin-top:12px;min-height:18px;color:var(--muted)}
   .ustatus.ok{color:var(--green)}.ustatus.err{color:var(--red)}
@@ -303,10 +305,10 @@
   .cookie button{flex:0 0 auto;background:var(--amber-deep);color:var(--bg);border:0;
     border-radius:999px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
 
-  .navbar{position:sticky;top:0;z-index:90;background:rgba(8,11,18,.72);
+  .navbar{position:sticky;top:0;z-index:90;background:rgba(10,11,13,.84);
     backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
     border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
-  .navbar.scrolled{border-bottom-color:var(--line);background:rgba(8,11,18,.86)}
+  .navbar.scrolled{border-bottom-color:var(--line);background:rgba(10,11,13,.96)}
   .navbar nav{padding:14px 0}
 
   .totop{position:fixed;right:22px;bottom:22px;z-index:95;width:44px;height:44px;border-radius:50%;
@@ -317,20 +319,36 @@
   .totop.show{opacity:1;visibility:visible;transform:none}
   .totop:hover{background:rgba(255,255,255,.1)}
 
-  .audience{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px;text-align:left}
-  .aud-card{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:26px;
-    transition:transform .2s,border-color .2s}
-  .aud-card:hover{transform:translateY(-3px);border-color:rgba(232,181,107,.3)}
-  .aud-ic{font-size:28px;margin-bottom:14px}
-  .aud-card h3{font-size:1.12rem;font-weight:700;margin-bottom:8px}
-  .aud-card p{font-size:14px;color:var(--muted);line-height:1.55}
-
   @media(max-width:720px){
-    .split,.steps,.audience{grid-template-columns:1fr}
+    .split,.steps{grid-template-columns:1fr}
     section{padding:60px 0}
     .modal-box{height:88vh}
   }
-  @media(max-width:560px){.cookie{flex-direction:column;align-items:stretch;text-align:center}}
+  @media(max-width:560px){
+    .cookie{flex-direction:column;align-items:stretch;text-align:center}
+    .wrap{padding-left:18px;padding-right:18px}
+    .navbar nav{gap:14px;padding:11px 0}
+    .brand{font-size:14px;gap:8px}
+    .brand img{width:34px;height:34px;border-radius:8px}
+    .nav-cta{padding:9px 12px;font-size:12px;white-space:nowrap}
+    .nav-cta-full{display:none}.nav-cta-short{display:inline}
+    header{padding-top:45px}
+    .eyebrow{font-size:10px;letter-spacing:1.7px;line-height:1.5}
+    .hero-cta{flex-direction:column;align-items:center}
+    .btn{width:min(270px,100%);justify-content:center}
+    .system-note{font-size:11.5px}
+    .demo{margin-top:44px}
+    .demo-workspace{padding:14px}
+    .notif{padding:14px}
+    .final{padding:48px 18px}
+    .updates-box input{font-size:16px}
+  }
+  @media(min-width:361px) and (max-width:560px){
+    .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .gcard{padding:14px}
+    .gpill{max-width:100%;padding:5px 9px;font-size:12px;white-space:normal}
+    .gcard p{font-size:12.5px}
+  }
 </style>
 <script
     src="https://analyse.ki-notch.de/api/script.js"
@@ -340,26 +358,27 @@
 </head>
 <body>
 
-<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 
 <div class="navbar" id="navbar">
   <div class="wrap">
     <nav>
       <div class="brand">
-        <img src="icon.png" alt="Sounds Human App-Icon" width="38" height="38">
+        <img src="icon-76.png" alt="Sounds Human App-Icon" width="38" height="38">
         Sounds Human
       </div>
-      <a class="nav-cta" href="#download">Text vor dem Senden prüfen</a>
+      <a class="nav-cta" href="#download"><span class="nav-cta-full">Für 9,99 € laden</span><span class="nav-cta-short">Jetzt laden</span></a>
     </nav>
   </div>
 </div>
 
+<main id="main-content">
 <header class="wrap">
-  <div class="eyebrow">Für den Mac · Lokal · Apple Intelligence</div>
+  <div class="eyebrow">Mac-Lektor · lokal mit Apple Intelligence</div>
   <h1>Bevor du sendest:<br>klingt das wirklich nach <span class="amber">dir</span>?</h1>
-  <p class="lead">Sounds Human prüft deinen Text auf KI-Geruch, Tonfall, Unklarheit und Fehler. Es schreibt nichts um. Es zeigt dir nur, wie dein Text wirkt.</p>
+  <p class="lead">Sounds Human prüft KI-Muster, Tonfall, Unklarheit und Fehler. Die App markiert die Stelle und erklärt ihre Wirkung. Du überarbeitest den Text selbst.</p>
   <div class="hero-cta">
-    <a class="btn btn-store" href="https://apps.apple.com/de/app/sounds-human/id6780192429?mt=12" target="_blank" rel="noopener" aria-label="Im Mac App Store laden" data-rybbit-event="app_store_click" data-rybbit-prop-location="hero">
+    <a class="btn btn-store" href="https://apps.apple.com/de/app/sounds-human/id6780192429?mt=12" target="_blank" rel="noopener" data-rybbit-event="app_store_click" data-rybbit-prop-location="hero">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.92-.03-.01-2.7-1.04-2.73-4.13zM14.6 4.59c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.15 1.14.09 2.3-.58 3.02-1.44z"/></svg>
       <span class="st"><small>Laden im</small><b>Mac App Store</b></span>
     </a>
@@ -367,16 +386,17 @@
   </div>
   <div class="price">9,99 € <span>· einmalig · kein Abo</span></div>
   <div class="hero-note">Kein Konto · Keine Cloud · Läuft komplett auf deinem Mac</div>
+  <p class="system-note">Benötigt einen Mac mit Apple Silicon und aktiviertem Apple Intelligence. Die Rechtschreibprüfung funktioniert auch ohne Apple Intelligence.</p>
 
   <div class="demo">
     <div class="mac-menubar" aria-hidden="true">
       <div class="menu-left">
-        <img src="icon.png" alt="">
+        <img src="icon-76.png" alt="">
         <span class="menu-app">Sounds Human</span>
         <span class="menu-muted">Lektorblick</span>
       </div>
       <div class="menu-right">
-        <img class="menu-status-app" src="icon.png" alt="" aria-hidden="true">
+        <img class="menu-status-app" src="icon-76.png" alt="" aria-hidden="true">
         <span class="menu-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none"><path d="M5 10.5a10 10 0 0 1 14 0M8.5 14a5 5 0 0 1 7 0M12 17.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </span>
@@ -402,17 +422,17 @@
           <span class="tap">Lektorblick</span>
         </div>
         <div class="notif-pills">
-          <button class="pill amber open" type="button"
+          <button class="pill amber open" type="button" aria-pressed="true"
             data-clarity="2" data-warmth="3" data-natural="1"
             data-effect="Floskeln und Buzzwords stapeln sich. Der Satz klingt dadurch eher erzeugt als gesagt."
             data-question="Würdest du diese Formulierung in einem echten Gespräch genauso verwenden?"
             data-signal="„in der heutigen schnelllebigen Welt“, „nicht nur“, „Mehrwert generieren“">klingt nach KI <span class="chev">⌄</span></button>
-          <button class="pill red" type="button"
+          <button class="pill red" type="button" aria-pressed="false"
             data-clarity="3" data-warmth="3" data-natural="3"
             data-effect="Ein Tippfehler lenkt vom Inhalt ab und wirkt in einem kurzen Text sofort unaufmerksam."
             data-question="Soll der Text vor dem Senden noch einmal glatt gelesen werden?"
             data-signal="entscheident → entscheidend">1 Fehler <span class="chev">⌄</span></button>
-          <button class="pill amber" type="button"
+          <button class="pill amber" type="button" aria-pressed="false"
             data-clarity="1" data-warmth="3" data-natural="2"
             data-effect="Der Satz bleibt groß und abstrakt. Der Leser weiß noch nicht, was konkret gemeint ist."
             data-question="Welche konkrete Aussage soll beim Empfänger hängen bleiben?"
@@ -423,7 +443,7 @@
           <div class="meter"><span>Wärme</span><div class="bars" id="meterWarmth" data-score="3"><i></i><i></i><i></i><i></i></div></div>
           <div class="meter"><span>Natürlichkeit</span><div class="bars" id="meterNatural" data-score="1"><i></i><i></i><i></i><i></i></div></div>
         </div>
-        <div class="notif-detail" id="notifD">
+        <div class="notif-detail" id="notifD" aria-live="polite">
           <div class="detail-block">
             <div class="detail-label">⌁ Wirkung</div>
             <p class="detail-text" id="notifEffect">Floskeln und Buzzwords stapeln sich. Der Satz klingt dadurch eher erzeugt als gesagt.</p>
@@ -442,16 +462,12 @@
   </div>
 </header>
 
-<section class="wrap center">
-  <p class="problem reveal"><span class="hl">Viele Texte klingen heute korrekt.</span><br>Aber nicht mehr nach einer Person.</p>
-  <p class="sec-sub reveal" style="margin:18px auto 0">Zu glatt. Zu allgemein. Zu viele Floskeln. Sounds Human zeigt dir diese Stellen, bevor du sie abschickst.</p>
-</section>
-
 <section class="wrap">
   <div class="split">
     <div class="reveal">
-      <h2>Der letzte Blick auf deinen Text, bevor ihn jemand anderes liest.</h2>
-      <p class="sec-sub">Sounds Human markiert Stellen, die künstlich, unklar, schroff oder fehlerhaft wirken. Lokal auf deinem Mac. Ohne Konto. Ohne Cloud. Ohne deinen Stil glattzubügeln.</p>
+      <h2>Ein letzter Blick vor dem Senden.</h2>
+      <p class="sec-sub">Sounds Human markiert Stellen, die künstlich, unklar, schroff oder fehlerhaft wirken, und zeigt, warum sie auffallen.</p>
+      <p class="audience-note">Ob du einen KI-Entwurf prüfst oder selbst formulierst: Du entscheidest, was du änderst und was genau so bleiben soll.</p>
     </div>
     <div class="vs reveal">
       <div class="vs-row no"><div class="ic">✕</div><div><b>Kein Ghostwriter. Kein KI-Detektor.</b><p>Die App schreibt nicht um und behauptet nicht, einen Ursprung beweisen zu können.</p></div></div>
@@ -460,30 +476,13 @@
   </div>
 </section>
 
-<section class="wrap center">
-  <h2 class="reveal">Egal, wie du schreibst.</h2>
-  <p class="sec-sub reveal">Sounds Human ist für beide da — das Ziel ist immer dasselbe: ein Text, der nach einem Menschen klingt.</p>
-  <div class="audience">
-    <div class="aud-card reveal">
-      <div class="aud-ic">🤖</div>
-      <h3>Du nutzt KI zum Schreiben?</h3>
-      <p>Völlig okay. Sounds Human sorgt dafür, dass es niemand merkt: Es findet den verräterischen Maschinen-Klang, den du selbst überliest — bevor du sendest.</p>
-    </div>
-    <div class="aud-card reveal">
-      <div class="aud-ic">✍️</div>
-      <h3>Du formulierst lieber selbst?</h3>
-      <p>Dann ist Sounds Human dein Lektor, kein Ghostwriter. Es liest mit und gibt ehrliches Feedback zu Ton und Wirkung — und nimmt dir das Schreiben trotzdem nie aus der Hand.</p>
-    </div>
-  </div>
-</section>
-
 <section class="wrap center" id="how">
-  <h2 class="reveal">Drei Tasten, fertig.</h2>
-  <p class="sec-sub reveal">Funktioniert in jeder App — Mail, Slack, LinkedIn, Notizen.</p>
+  <h2 class="reveal">So prüfst du einen Text.</h2>
+  <p class="sec-sub reveal">Überall dort, wo du Text markieren und kopieren kannst, etwa in Mail, Slack, LinkedIn, Notizen oder einem Editor.</p>
   <div class="steps">
     <div class="step reveal"><div class="n">01</div><div class="keys"><span class="key">⌘C</span></div><h3>Markieren & kopieren</h3><p>Wähl deinen Text und drück ⌘C, wie immer.</p></div>
-    <div class="step reveal"><div class="n">02</div><div class="keys"><span class="key">⌥⌘C</span></div><h3>Prüfen</h3><p>Dein Kürzel drücken. Das Modell denkt kurz lokal nach.</p></div>
-    <div class="step reveal"><div class="n">03</div><div class="keys"><span class="key">👀</span></div><h3>Hinweis lesen</h3><p>Eine kurze Benachrichtigung erscheint oben rechts. Antippen für Details.</p></div>
+    <div class="step reveal"><div class="n">02</div><div class="keys"><span class="key">⌥⌘C</span></div><h3>Prüfen</h3><p>Drück dein Kürzel. Das Modell prüft den kopierten Text lokal.</p></div>
+    <div class="step reveal"><div class="n">03</div><div class="keys"><span class="key">Hinweis</span></div><h3>Ergebnis lesen</h3><p>Eine kurze Benachrichtigung erscheint oben rechts. Öffne sie für Details.</p></div>
   </div>
 </section>
 
@@ -508,18 +507,18 @@
 <section class="wrap">
   <div class="split">
     <div class="vs reveal">
-      <div class="vs-row yes"><div class="ic">✓</div><div><b>Dein Schreibstil</b><p>Gib ein paar typische Sätze an — die App lernt, was bei dir „klingt nach dir“ heißt.</p></div></div>
-      <div class="vs-row yes"><div class="ic">✓</div><div><b>Worauf achten</b><p>Sag in deinen Worten, was sie ignorieren soll: „Ironie ist bei mir Absicht.“</p></div></div>
+      <div class="vs-row yes"><div class="ic">✓</div><div><b>Stilbeispiele</b><p>Hinterlege einige typische Sätze. Die App bezieht sie in ihre Einschätzung ein.</p></div></div>
+      <div class="vs-row yes"><div class="ic">✓</div><div><b>Eigene Hinweise</b><p>Beschreibe in deinen Worten, was die App bewusst nicht beanstanden soll, etwa: „Ironie ist bei mir Absicht.“</p></div></div>
     </div>
     <div class="reveal">
-      <h2>Es lernt, wie du klingst.</h2>
-      <p class="sec-sub">Keine Checkbox-Wüste. Du sagst der App in normaler Sprache, worauf sie achten soll — und sie respektiert es. Genauso menschlich wie der Anspruch an deinen Text.</p>
+      <h2>Sounds Human berücksichtigt deinen Stil.</h2>
+      <p class="sec-sub">Du beschreibst in normaler Sprache, worauf die App achten oder bewusst nicht reagieren soll. So wird eine gewollte Eigenheit nicht automatisch zum Fehler.</p>
     </div>
   </div>
 </section>
 
 <section class="wrap privacy">
-  <div class="lock reveal" style="opacity:1;transform:none">🔒</div>
+  <div class="lock reveal" style="opacity:1;transform:none" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
   <h2 class="reveal">Bleibt auf deinem Mac.</h2>
   <p class="sec-sub reveal" style="margin:14px auto 0">Die Analyse läuft vollständig lokal über Apple Intelligence. Dein Text, dein Schreibstil, deine Notizen — nichts wird an einen Server gesendet oder gespeichert. Das ist nicht nur ein Feature. Es ist der ganze Punkt.</p>
   <div class="badges reveal">
@@ -534,21 +533,21 @@
 <section class="wrap">
   <h2 class="center reveal">Häufige Fragen</h2>
   <div class="faq">
-    <details class="reveal"><summary>Schreibt Sounds Human meinen Text um?</summary><p>Nein — bewusst nicht. Es zeigt dir die Stelle, die Wirkung und eine offene Frage. Die Formulierung bleibt immer deine. Genau das unterscheidet es von Writing Tools und ChatGPT.</p></details>
+    <details class="reveal"><summary>Schreibt Sounds Human meinen Text um?</summary><p>Nein. Die App zeigt dir die Stelle, ihre Wirkung und eine offene Frage. Du überarbeitest den Text selbst.</p></details>
     <details class="reveal"><summary>Brauche ich ein Abo oder Konto?</summary><p>Nein. Einmal laden, fertig. Kein Konto, kein Login, keine Cloud. Alles läuft auf deinem Mac.</p></details>
     <details class="reveal"><summary>Was brauche ich dafür?</summary><p>Einen Mac mit Apple Intelligence (Apple Silicon, M-Serie) und aktiviertem Apple Intelligence. Die Rechtschreibprüfung funktioniert auch ohne.</p></details>
-    <details class="reveal"><summary>Funktioniert es in jeder App?</summary><p>Ja. Du markierst Text, drückst ⌘C und dann dein Kürzel — egal ob Mail, Slack, LinkedIn, Notizen oder ein Editor.</p></details>
-    <details class="reveal"><summary>Erkennt es wirklich KI-Text?</summary><p>Es erkennt die verräterischen Muster, die Leser als „KI-Geruch“ wahrnehmen — Floskeln, „nicht nur X, sondern Y“, Buzzword-Dichte. Keine forensische Detektion, sondern ein ehrlicher Spiegel.</p></details>
+    <details class="reveal"><summary>Wo funktioniert die Prüfung?</summary><p>In Apps, in denen du Text markieren und kopieren kannst. Dazu gehören Mail, Slack, LinkedIn, Notizen und gängige Editoren.</p></details>
+    <details class="reveal"><summary>Erkennt es wirklich KI-Text?</summary><p>Sounds Human markiert Muster, die oft künstlich wirken, etwa Floskelketten, „nicht nur X, sondern Y“ oder eine hohe Buzzword-Dichte. Die App behauptet nicht, den Ursprung eines Textes forensisch bestimmen zu können.</p></details>
   </div>
 </section>
 
 <section class="wrap" id="download">
   <div class="final reveal">
-    <div class="eyebrow">Bereit?</div>
-    <h2 style="margin-bottom:10px">Schick nie wieder Maschinen-Text.</h2>
-    <p class="sec-sub" style="margin:0 auto 24px">Ein Kürzel. Ein Blick. Dann weißt du, ob es nach dir klingt.</p>
+    <div class="eyebrow">Einmal kaufen · auf deinem Mac nutzen</div>
+    <h2 style="margin-bottom:10px">Schick Texte, die nach dir klingen.</h2>
+    <p class="sec-sub" style="margin:0 auto 24px">Sounds Human zeigt dir auffällige Stellen. Die endgültige Formulierung bleibt bei dir.</p>
     <div class="hero-cta">
-      <a class="btn btn-store" href="https://apps.apple.com/de/app/sounds-human/id6780192429?mt=12" target="_blank" rel="noopener" aria-label="Im Mac App Store laden" data-rybbit-event="app_store_click" data-rybbit-prop-location="final_cta">
+      <a class="btn btn-store" href="https://apps.apple.com/de/app/sounds-human/id6780192429?mt=12" target="_blank" rel="noopener" data-rybbit-event="app_store_click" data-rybbit-prop-location="final_cta">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.92-.03-.01-2.7-1.04-2.73-4.13zM14.6 4.59c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.15 1.14.09 2.3-.58 3.02-1.44z"/></svg>
         <span class="st"><small>Laden im</small><b>Mac App Store</b></span>
       </a>
@@ -558,9 +557,12 @@
       </a>
     </div>
     <div class="price" style="margin-top:16px">9,99 € <span>· einmalig · kein Abo</span></div>
-    <p class="buy-note">Mit dem Kauf akzeptieren Sie die <a href="#" onclick="openModal('eula.html');return false">EULA</a>. Für Käufe über den Mac App Store gelten ergänzend die Apple-Bedingungen.</p>
+    <p class="purchase-choice">Sounds Human kostet im Mac App Store und als direkter DMG-Download jeweils 9,99 €.</p>
+    <p class="system-note">Benötigt einen Mac mit Apple Silicon und aktiviertem Apple Intelligence. Die Rechtschreibprüfung funktioniert auch ohne Apple Intelligence.</p>
+    <p class="buy-note">Mit dem Kauf akzeptieren Sie die <a href="eula.html" onclick="openModal('eula.html',this);return false">EULA</a>. Für Käufe über den Mac App Store gelten ergänzend die Apple-Bedingungen.</p>
   </div>
 </section>
+</main>
 
 <footer class="wrap">
   Sounds Human · Lektor, kein Ghostwriter · © Robert Meyer 2026
@@ -568,10 +570,10 @@
     <a href="ki-text-erkennen.html" target="_blank" rel="noopener">KI-Text erkennen</a>
     <a href="ki-text-menschlicher-machen.html" target="_blank" rel="noopener">KI-Text menschlicher machen</a>
     <a href="sounds-human-vs-humanizer.html" target="_blank" rel="noopener">Vergleich: Lektor vs. Humanizer</a>
-    <a href="#" onclick="openModal('support.html');return false">Support</a>
-    <a href="#" onclick="openModal('impressum.html');return false">Impressum</a>
-    <a href="#" onclick="openModal('datenschutz.html');return false">Datenschutz</a>
-    <a href="#" onclick="openModal('eula.html');return false">EULA</a>
+    <a href="support.html" onclick="openModal('support.html',this);return false">Support</a>
+    <a href="impressum.html" onclick="openModal('impressum.html',this);return false">Impressum</a>
+    <a href="datenschutz.html" onclick="openModal('datenschutz.html',this);return false">Datenschutz</a>
+    <a href="eula.html" onclick="openModal('eula.html',this);return false">EULA</a>
     <a class="yt" href="https://youtube.com/@rmkipraxis?si=h2qNroeG7EqviRwE" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Kanal">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff4d4d" d="M23.5 6.2a3.04 3.04 0 0 0-2.14-2.16C19.47 3.5 12 3.5 12 3.5s-7.47 0-9.36.54A3.04 3.04 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3.04 3.04 0 0 0 2.14 2.16c1.89.54 9.36.54 9.36.54s7.47 0 9.36-.54a3.04 3.04 0 0 0 2.14-2.16A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8Z"></path><path fill="#fff" d="m9.75 15.5 6.25-3.5-6.25-3.5v7Z"></path></svg>
       YouTube</a>
@@ -579,17 +581,17 @@
   </nav>
 </footer>
 
-<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Rechtliche Informationen" onclick="if(event.target===this)closeModal()">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()" aria-label="Schließen">✕</button>
     <iframe id="modalFrame" title="Rechtliche Hinweise" src=""></iframe>
   </div>
 </div>
 
-<div class="modal" id="updatesModal" onclick="if(event.target===this)closeUpdates()">
+<div class="modal" id="updatesModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="updatesTitle" onclick="if(event.target===this)closeUpdates()">
   <div class="updates-box">
     <button class="modal-close" onclick="closeUpdates()" aria-label="Schließen">✕</button>
-    <h3>Updates / Newsletter</h3>
+    <h3 id="updatesTitle">Updates / Newsletter</h3>
     <p class="u-intro">Produkt-Updates ohne Umweg. Wenn es neue Versionen oder den Start im App Store gibt, informieren wir per E-Mail. Kein Massenmarketing, nur produktbezogene Updates.</p>
     <form id="updatesForm" novalidate>
       <label for="uName">Name (optional)</label>
@@ -616,19 +618,25 @@
     ok.addEventListener('click',()=>{try{localStorage.setItem(key,'1')}catch(_){}c.classList.add('hide')});
   })();
 
-  const io=new IntersectionObserver((es)=>{
-    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
-  },{threshold:.14});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.documentElement.classList.add('has-reveal');
+    const io=new IntersectionObserver((es)=>{
+      es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+    },{threshold:.14});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }
 
   const modal=document.getElementById('modal'),frame=document.getElementById('modalFrame');
-  function openModal(src){frame.src=src;modal.classList.add('open');document.body.style.overflow='hidden'}
-  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{frame.src=''},250)}
+  let lastDialogTrigger=null;
+  function rememberTrigger(trigger){lastDialogTrigger=trigger||document.activeElement}
+  function openModal(src,trigger){rememberTrigger(trigger);frame.src=src;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>modal.querySelector('.modal-close').focus(),100)}
+  function closeModal(){const wasOpen=modal.classList.contains('open');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';setTimeout(()=>{frame.src=''},250);if(wasOpen&&lastDialogTrigger?.focus)lastDialogTrigger.focus()}
+  frame.addEventListener('load',()=>{if(modal.classList.contains('open'))modal.querySelector('.modal-close').focus()});
 
   const WEBHOOK='https://n8n.top-beraternetzwerk.de/webhook/termine';
   const um=document.getElementById('updatesModal');
-  function openUpdates(){um.classList.add('open');document.body.style.overflow='hidden'}
-  function closeUpdates(){um.classList.remove('open');document.body.style.overflow=''}
+  function openUpdates(){rememberTrigger(document.activeElement);um.classList.add('open');um.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('uEmail').focus(),100)}
+  function closeUpdates(){const wasOpen=um.classList.contains('open');um.classList.remove('open');um.setAttribute('aria-hidden','true');document.body.style.overflow='';if(wasOpen&&lastDialogTrigger?.focus)lastDialogTrigger.focus()}
 
   document.getElementById('updatesForm').addEventListener('submit',async(e)=>{
     e.preventDefault();
@@ -655,7 +663,18 @@
     finally{submit.disabled=false;}
   });
 
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeUpdates();}});
+  function trapDialogFocus(dialog,e){
+    if(e.key!=='Tab'||!dialog.classList.contains('open'))return;
+    const controls=[...dialog.querySelectorAll('a[href],button,input,iframe,[tabindex]:not([tabindex="-1"])')].filter(el=>!el.disabled);
+    if(!controls.length)return;
+    const first=controls[0],last=controls[controls.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){closeModal();closeUpdates();return}
+    trapDialogFocus(modal,e);trapDialogFocus(um,e)
+  });
 
   const navbar=document.getElementById('navbar'),totop=document.getElementById('totop');
   function onScroll(){
@@ -677,8 +696,9 @@
   const meterNatural=document.getElementById('meterNatural');
   document.querySelectorAll('.notif .pill').forEach(pill=>{
     pill.addEventListener('click',()=>{
-      document.querySelectorAll('.notif .pill').forEach(p=>p.classList.remove('open'));
+      document.querySelectorAll('.notif .pill').forEach(p=>{p.classList.remove('open');p.setAttribute('aria-pressed','false')});
       pill.classList.add('open');
+      pill.setAttribute('aria-pressed','true');
       if(notifD)notifD.animate([{opacity:.65,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});
       if(notifEffect)notifEffect.textContent=pill.dataset.effect || '';
       if(notifQuestion)notifQuestion.textContent=pill.dataset.question || '';
