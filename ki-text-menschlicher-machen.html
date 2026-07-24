@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KI-Text menschlicher machen: 5 Schritte statt Umschreib-Tools | Sounds Human</title>
+<title>KI-Text menschlicher machen: 5 Schritte | Sounds Human</title>
 <meta name="description" content="ChatGPT-Text klingt nach Maschine? Warum AI-Humanizer das falsche Werkzeug sind und mit welchen 5 Schritten dein Text wieder nach dir klingt – ohne Umschreiben lassen.">
 <meta name="author" content="Robert Meyer">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#0a0b0d">
-<link rel="icon" type="image/png" href="icon-76.png">
+<meta name="theme-color" content="#f5f5f7">
 <link rel="canonical" href="https://sounds-human.de/ki-text-menschlicher-machen.html">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Sounds Human">
 <meta property="og:locale" content="de_DE">
@@ -17,10 +18,14 @@
 <meta property="og:title" content="KI-Text menschlicher machen: 5 Schritte statt Umschreib-Tools">
 <meta property="og:description" content="Warum AI-Humanizer das falsche Werkzeug sind und mit welchen 5 Schritten dein Text wieder nach dir klingt.">
 <meta property="og:image" content="https://sounds-human.de/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sounds Human hilft, KI-Text wieder nach dir klingen zu lassen.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KI-Text menschlicher machen: 5 Schritte statt Umschreib-Tools">
 <meta name="twitter:description" content="Warum AI-Humanizer das falsche Werkzeug sind und mit welchen 5 Schritten dein Text wieder nach dir klingt.">
 <meta name="twitter:image" content="https://sounds-human.de/og-image.png">
+<meta name="twitter:image:alt" content="Sounds Human hilft, KI-Text wieder nach dir klingen zu lassen.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,28 +33,125 @@
   "headline": "KI-Text menschlicher machen: 5 Schritte statt Umschreib-Tools",
   "description": "Warum AI-Humanizer das falsche Werkzeug sind und mit welchen 5 Schritten KI-Text wieder menschlich klingt.",
   "inLanguage": "de",
-  "author": { "@type": "Person", "name": "Robert Meyer" },
-  "publisher": { "@type": "Organization", "name": "Sounds Human", "url": "https://sounds-human.de/" },
-  "mainEntityOfPage": "https://sounds-human.de/ki-text-menschlicher-machen.html",
+  "image": "https://sounds-human.de/og-image.png",
+  "author": {
+    "@type": "Person",
+    "name": "Robert Meyer",
+    "sameAs": "https://www.youtube.com/@rmkipraxis"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sounds Human",
+    "url": "https://sounds-human.de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sounds-human.de/icon.png",
+      "width": 256,
+      "height": 256
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sounds-human.de/ki-text-menschlicher-machen.html"
+  },
   "datePublished": "2026-07-02",
-  "dateModified": "2026-07-02"
+  "dateModified": "2026-07-24",
+  "isAccessibleForFree": true
 }
 </script>
 <script defer src="https://cv.rm-on.de/script.js" data-website-id="7956aeae-0eec-42c5-887c-97e8f1986d49"></script>
-<link rel="stylesheet" href="article.css">
+<script defer src="https://analyse.ki-notch.de/api/script.js" data-site-id="08ba007f8e54"></script>
+<style>
+  :root{
+    --bg:#080b12; --bg2:#0f172a; --panel:#121a2b;
+    --amber:#e8b56b; --amber-deep:#f5a524; --green:#5bc77f; --red:#e8736d;
+    --text:#e9eef6; --muted:#94a3b8; --faint:#5b6677;
+    --line:rgba(255,255,255,.08);
+    --glass:rgba(255,255,255,.045);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",system-ui,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+  .b1{width:560px;height:560px;background:#3a2a12;top:-160px;left:-120px}
+  .b2{width:480px;height:480px;background:#1a2f24;bottom:-140px;right:-100px;opacity:.4}
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:16px;color:var(--text);text-decoration:none}
+  .brand img{width:38px;height:38px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+  .nav-cta{font-size:13px;font-weight:600;color:var(--bg);background:var(--amber-deep);
+    padding:9px 16px;border-radius:999px;text-decoration:none;transition:transform .15s,filter .15s}
+  .nav-cta:hover{transform:translateY(-1px);filter:brightness(1.05)}
+
+  article{max-width:740px;margin:0 auto;padding:44px 0 30px}
+  .eyebrow{font:600 12px/1 ui-monospace,"SF Mono",monospace;letter-spacing:2.5px;
+    color:var(--amber);text-transform:uppercase;margin-bottom:20px}
+  h1{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;letter-spacing:-.03em;line-height:1.12}
+  h1 .amber{color:var(--amber)}
+  .lead{font-size:clamp(1.02rem,2vw,1.18rem);color:var(--muted);margin-top:20px;font-weight:450}
+  .answer{margin-top:26px;padding:20px 22px;border:1px solid var(--line);border-radius:16px;
+    background:var(--glass);font-size:15.5px;line-height:1.65}
+  .answer b{color:var(--amber)}
+  article h2{font-size:clamp(1.3rem,2.8vw,1.7rem);font-weight:750;letter-spacing:-.02em;margin:52px 0 14px}
+  article h3{font-size:1.05rem;font-weight:700;margin:30px 0 8px}
+  article h3 .num{color:var(--amber);font:700 14px ui-monospace,"SF Mono",monospace;margin-right:8px}
+  article p{color:var(--muted);margin:12px 0;font-size:15.5px}
+  article li{color:var(--muted);margin:8px 0 8px 20px;font-size:15.5px}
+  article b,article strong{color:var(--text)}
+  article a{color:var(--amber);text-decoration:none}
+  article a:hover{text-decoration:underline}
+  .example{margin:14px 0;padding:14px 18px;border-left:3px solid var(--amber);border-radius:0 12px 12px 0;
+    background:var(--glass);font-size:14.5px;color:var(--muted)}
+  .example .tag{display:block;font:600 10.5px/1 ui-monospace,"SF Mono",monospace;letter-spacing:1.5px;
+    color:var(--faint);text-transform:uppercase;margin-bottom:7px}
+  .example .bad{color:var(--red)}
+  .example .good{color:var(--green)}
+
+  .faqbox{margin-top:18px}
+  .faqbox details{border:1px solid var(--line);border-radius:14px;background:var(--glass);
+    padding:16px 20px;margin-bottom:10px}
+  .faqbox summary{cursor:pointer;font-weight:650;font-size:15px;color:var(--text)}
+  .faqbox p{margin-top:10px}
+
+  .cta{margin:60px 0 20px;padding:30px 28px;text-align:center;border:1px solid var(--line);
+    border-radius:20px;background:linear-gradient(180deg,rgba(20,28,44,.82),rgba(8,12,20,.62))}
+  .cta h2{margin:0 0 10px;font-size:1.45rem}
+  .cta p{max-width:520px;margin:0 auto}
+  .btn{font-size:15px;font-weight:600;padding:13px 26px;border-radius:999px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:9px;margin-top:20px;
+    background:var(--amber-deep);color:var(--bg);transition:transform .15s,filter .15s}
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+  .cta small{display:block;margin-top:12px;font-size:12.5px;color:var(--faint)}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--faint);font-size:13px}
+  footer a{color:var(--muted);text-decoration:none}
+  .foot-nav{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  @media(max-width:640px){article{padding-top:28px}}
+</style>
+<link rel="stylesheet" href="site-common.css">
+<script src="site-common.js" defer></script>
 </head>
-<body>
-<a class="skip-link" href="#article-content">Zum Inhalt springen</a>
+<body class="subpage">
+<a class="skip-link" href="#content">Zum Inhalt springen</a>
+<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div></div>
+
 <div class="wrap">
-  <nav aria-label="Seitennavigation">
-    <a class="brand" href="index.html"><img src="icon-76.png" width="38" height="38" alt="Sounds Human App-Icon">Sounds Human</a>
+  <nav>
+    <a class="brand" href="index.html"><img src="icon.png" alt="">Sounds Human</a>
     <a class="nav-cta" href="index.html">Zur App</a>
   </nav>
 
-  <article id="article-content">
+  <article id="content">
     <div class="eyebrow">Ratgeber</div>
     <h1>KI-Text <span class="amber">menschlicher</span> machen — ohne Umschreib-Tools</h1>
     <p class="lead">Dein ChatGPT-Entwurf klingt nach Maschine? Die naheliegende Lösung — ein „AI-Humanizer" — macht es meist schlimmer. Was wirklich hilft: fünf Handgriffe, die deinen Text zu deinem machen.</p>
+    <p class="article-meta">Von Robert Meyer · Aktualisiert am 24. Juli 2026</p>
 
     <div class="answer">
       <b>Kurzantwort:</b> KI-Text wird menschlich durch Konkretes, nicht durch Paraphrasieren. Ersetze Floskeln durch echte Details (Namen, Daten, Bezüge), variiere die Satzlängen, streiche das Fazit und nimm eine klare Haltung ein. Umschreib-Tools tauschen dagegen nur einen generischen Stil gegen einen anderen — dein Ton geht dabei verloren.
@@ -114,16 +216,35 @@
   </article>
 </div>
 
-<footer class="wrap">
-  Sounds Human · Lektor, kein Ghostwriter · © Robert Meyer 2026
-  <nav class="foot-nav" aria-label="Ratgeber und Rechtliches">
-    <a href="index.html">Startseite</a>
-    <a href="ki-text-erkennen.html">KI-Text erkennen</a>
-    <a href="sounds-human-vs-humanizer.html">Vergleich</a>
-    <a href="support.html">Support</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
-  </nav>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <img src="icon.png" alt="" width="36" height="36">
+      <div><strong>Sounds Human</strong><span>Der letzte Blick auf deinen Text, bevor du ihn sendest.</span></div>
+    </div>
+    <nav class="site-footer-nav" aria-label="Fußnavigation">
+      <div class="site-footer-group">
+        <span class="site-footer-label">Produkt</span>
+        <a href="index.html">Startseite</a>
+        <a href="updates.html">Updates</a>
+        <a class="youtube-link" href="https://youtube.com/@rmkipraxis?si=h2qNroeG7EqviRwE" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg>YouTube</a>
+      </div>
+      <div class="site-footer-group">
+        <span class="site-footer-label">Wissen</span>
+        <a href="ki-text-erkennen.html">KI-Text erkennen</a>
+        <a href="ki-text-menschlicher-machen.html">KI-Text menschlicher machen</a>
+        <a href="sounds-human-vs-humanizer.html">Lektor vs. Humanizer</a>
+      </div>
+      <div class="site-footer-group">
+        <span class="site-footer-label">Hilfe &amp; Rechtliches</span>
+        <a href="support.html">Support</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="eula.html">EULA</a>
+      </div>
+    </nav>
+  </div>
+  <div class="site-footer-base"><span>© Robert Meyer 2026</span><span>Für macOS · lokal verarbeitet · kein Abo</span></div>
 </footer>
 </body>
 </html>
